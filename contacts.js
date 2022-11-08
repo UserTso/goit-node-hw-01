@@ -32,6 +32,7 @@ const addContact = async (name, email, phone) => {
     };
     contacts.push(newContact);
     updateContacts(contacts);
+    return newContact;
     }
 
     const removeContact = async (id) => {
@@ -44,6 +45,7 @@ const addContact = async (name, email, phone) => {
 
         const [result] = contacts.splice(indexContact, 1);
         updateContacts(contacts);
+        return result;
     }
 
 module.exports = {

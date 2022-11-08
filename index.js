@@ -1,4 +1,5 @@
 // const argv = require("yargs").argv;
+const {program} = require('commander');
 const contacts = require('./contacts');
 
 const invokeAction = async({ action, id, name, email, phone }) => {
@@ -29,6 +30,19 @@ const invokeAction = async({ action, id, name, email, phone }) => {
 
 
 // invokeAction({action: 'getContactById', id: '10'});
-invokeAction({action: 'addContact', name: 'Sergii', email: 'Sergii@mail.com', phone: '123-123-123'});
-invokeAction({action: 'removeContact', id: '6369112e46ac3508fc047c5e'});
-invokeAction({action: 'listContacts'});
+// invokeAction({action: 'addContact', name: 'Sergii', email: 'Sergii@mail.com', phone: '123-123-123'});
+// invokeAction({action: 'removeContact', id: '63690c5797f33b07b4e748d4'});
+// invokeAction({action: 'listContacts'});
+
+program
+.option('-a, --action <type>')
+.option('-i, --id <type>')
+.option('-n, --name <type>')
+.option('-e, --email <type>')
+.option('-p, --phone <type>')
+
+program.parse(process.argv);
+
+const options = program.opts();
+
+invokeAction(options);
