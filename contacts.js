@@ -25,9 +25,9 @@ return result;
 const addContact = async (name, email, phone) => {
     const contacts = await listContacts();
     const newContact = {
-        name: 'Sergii',
-             email: 'Sergii@mail.com', 
-              phone: '123-123-123',
+        name: 'Mango',
+             email: 'mango@gmail.com', 
+              phone: '322-22-22',
               id: ObjectId()
     };
     contacts.push(newContact);
